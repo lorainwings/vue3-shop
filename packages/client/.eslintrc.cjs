@@ -12,7 +12,15 @@ module.exports = {
     'prettier',
     'plugin:prettier/recommended'
   ],
-  overrides: [],
+  overrides: [
+    {
+      // 已经使用了typescript来做类型检查, 关闭此规则
+      files: ['*.vue'],
+      rules: {
+        'no-undef': 'off'
+      }
+    }
+  ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     parser: '@typescript-eslint/parser',

@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-const TabsView = () => import('../views/tabs/index.vue')
-const Home = () => import('../views/tabs/home.vue')
-const Order = () => import('../views/tabs/order.vue')
-const Me = () => import('../views/tabs/me.vue')
+const TabsView = () => import('../views/tabs/Index.vue')
+const Home = () => import('../views/tabs/home/Home.vue')
+const Order = () => import('../views/tabs/order/Order.vue')
+const Me = () => import('../views/tabs/me/Me.vue')
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

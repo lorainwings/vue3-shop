@@ -1,10 +1,10 @@
 <template>
-  <router-view></router-view>
-  <van-tabbar v-model="active">
-    <van-tabbar-item name="home" icon="home-o">首页</van-tabbar-item>
-    <van-tabbar-item name="order" icon="bars">订单</van-tabbar-item>
-    <van-tabbar-item name="me" icon="contact">我的</van-tabbar-item>
-  </van-tabbar>
+  <RouterView></RouterView>
+  <VanTabbar v-model="active">
+    <VanTabbarItem name="home" icon="home-o">首页</VanTabbarItem>
+    <VanTabbarItem name="order" icon="bars">订单</VanTabbarItem>
+    <VanTabbarItem name="me" icon="contact">我的</VanTabbarItem>
+  </VanTabbar>
 </template>
 
 <script setup lang="ts">

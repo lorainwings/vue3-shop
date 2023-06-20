@@ -6,5 +6,15 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <RouterView />
+  <router-view />
 </template>
+
+<style scoped>
+/* 字体抗锯齿, 让字体看起来更清晰 */
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  color: #2c3e50;
+  font-size: 14px;
+}
+</style>

@@ -8,11 +8,25 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    // 将每个文件作为单独的模块, 确保我的程序代码可以被不进行任何类型检查的编译器(babel)正确地编译
     "isolatedModules": true,
+    // 开启AMD和commonjs的模块兼容, 即 export =
     "esModuleInterop": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "skipLibCheck": true
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    // 跳过类型声明文件检查
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
+  // 搜索d.ts文件的路径
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",

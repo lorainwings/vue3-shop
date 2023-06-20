@@ -15,7 +15,10 @@ import type { UserConfig, ConfigEnv } from 'vite'
 
 // https://vitejs.dev/config/
 export default ({ command, mode }: ConfigEnv): UserConfig => {
-  const { VITE_BASE_URL, VITE_DROP_CONSOLE } = loadEnv(mode, process.cwd())
+  const { VITE_BASE_URL, VITE_DROP_CONSOLE, VITE_BASE_API } = loadEnv(
+    mode,
+    process.cwd()
+  )
   const isBuild = command === 'build'
 
   return {
@@ -95,9 +98,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       port: 8888,
       proxy: {
         '/api': {
-          target: 'http://jsonplaceholder.typicode.com',
-          changeOrigin: true,
-          rewrite: (path) => path.replace(/^\/api/, '')
+          target: VITE_BASE_API,
+          changeOrigin: true
+          // rewrite: (path) => path.replace(/^\/api/, '')
         }
       }
     },
@@ -106,6 +109,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       exclude: ['vue-demi']
     },
     build: {
+      minify: 'terser',
       assetsInlineLimit: 8 * 1024,
       terserOptions: {
         compress: {

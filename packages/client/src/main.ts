@@ -1,4 +1,6 @@
 import 'normalize.css'
+import 'vant/lib/index.css'
+import './assets/common.scss'
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import App from './App.vue'
