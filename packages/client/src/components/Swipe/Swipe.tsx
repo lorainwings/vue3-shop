@@ -234,7 +234,9 @@ export default defineComponent({
       if (props.showIndicators) {
         return (
           <div class={bem('indicators')}>
-            {Array(count.value).fill('').map(renderDot)}
+            {/* 以下两行代码等同 */}
+            {/* {Array(count.value).fill('').map(renderDot)} */}
+            {Array.from({ length: count.value }, renderDot)}
           </div>
         )
       }
