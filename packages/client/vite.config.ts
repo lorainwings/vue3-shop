@@ -95,6 +95,8 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       }
     },
     server: {
+      // 使用ip访问的写法, 同时支持ipv4和ipv6
+      host: '::',
       port: 8888,
       proxy: {
         '/api': {
